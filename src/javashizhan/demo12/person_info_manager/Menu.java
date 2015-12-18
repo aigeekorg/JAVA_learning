@@ -8,15 +8,15 @@ public class Menu {
 	}
 	
 	public void show() {
-		System.out.println("====aigeek²Ëµ¥ÏµÍ³====");
-		System.out.println("[1] Ôö¼ÓÊı¾İ");
-		System.out.println("[2] É¾³ıÊı¾İ");
-		System.out.println("[3] ĞŞ¸ÄÊı¾İ");
-		System.out.println("[4] ²é¿´Êı¾İ");
-		System.out.println("[0] ÏµÍ³ÍË³ö");
+		System.out.println("====aigeekèœå•ç³»ç»Ÿ====");
+		System.out.println("[1] å¢åŠ æ•°æ®");
+		System.out.println("[2] åˆ é™¤æ•°æ®");
+		System.out.println("[3] ä¿®æ”¹æ•°æ®");
+		System.out.println("[4] æŸ¥çœ‹æ•°æ®");
+		System.out.println("[0] ç³»ç»Ÿé€€å‡º");
 		
 		InputData input = new InputData();
-		int i = input.getInt("ÇëÑ¡Ôñ£º", "ÇëÊäÈëÕıÈ·µÄÑ¡Ïî!");
+		int i = input.getInt("è¯·é€‰æ‹©ï¼š", "è¯·è¾“å…¥æ­£ç¡®çš„é€‰é¡¹!");
 		switch (i) {
 			case 1:{
 				Operate.add();
@@ -39,7 +39,7 @@ public class Menu {
 				break;
 			}
 			default:{
-				System.out.println("ÇëÑ¡ÔñÕıÈ·µÄ²Ù×÷£¡");
+				System.out.println("è¯·é€‰æ‹©æ­£ç¡®çš„æ“ä½œï¼");
 			}
 		}
 	}

@@ -12,7 +12,7 @@ public class FileOperate {
 		this.file = new File(pathName);
 	}
 	
-	//可以保存对象
+	//鍙互淇濆瓨瀵硅薄
 	public boolean save(Object obj) throws Exception{
 		ObjectOutputStream oos = null;
 		boolean flag = false;
@@ -33,7 +33,7 @@ public class FileOperate {
 	}
 	
 	
-	//读取对象
+	//璇诲彇瀵硅薄
 	public Object load() throws Exception {
 		Object obj = null;
 		ObjectInputStream ois = null;

@@ -9,8 +9,8 @@ public class Person implements Serializable{
 		this.name = name;
 		this.age = age;
 	}
-	public String toString(){//¸²Ğ´toString·½·¨
-		return "ĞÕÃû£º"+this.name+"£»ÄêÁä£º"+this.age;		
+	public String toString(){//è¦†å†™toStringæ–¹æ³•
+		return "å§“åï¼š"+this.name+"ï¼›å¹´é¾„ï¼š"+this.age;		
 	}
 	public String getName() {
 		return name;

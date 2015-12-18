@@ -11,7 +11,7 @@ public class InputData {
 	public InputData(){
 		this.buf = new BufferedReader(new InputStreamReader(System.in));
 	}
-	public String getString(String info) {//´Ó´Ë·½·¨ÖĞµÃµ½×Ö·û´®µÄĞÅÏ¢
+	public String getString(String info) {//ä»æ­¤æ–¹æ³•ä¸­å¾—åˆ°å­—ç¬¦ä¸²çš„ä¿¡æ¯
 		String temp = null;
 		System.out.print(info);
 		try {
@@ -24,13 +24,13 @@ public class InputData {
 	}
 	
 	
-	public int getInt(String info,String err) {//µÃµ½Ò»¸öÕûÊıµÄÊäÈëÊı¾İ
+	public int getInt(String info,String err) {//å¾—åˆ°ä¸€ä¸ªæ•´æ•°çš„è¾“å…¥æ•°æ®
 		int temp = 0;
 		String str = null;
 		boolean flag = true;
 		while(flag){
 			str = this.getString(info);
-			if (str.matches("^\\d+$")) {//ÅĞ¶ÏÊäÈëµÄÊÇ·ñÊÇÊı×Ö
+			if (str.matches("^\\d+$")) {//åˆ¤æ–­è¾“å…¥çš„æ˜¯å¦æ˜¯æ•°å­—
 				temp = Integer.parseInt(str);
 				flag = false;
 			}else {
@@ -40,7 +40,7 @@ public class InputData {
 		return temp;
 	}
 	
-	public float getFloat(String info,String err) {//µÃµ½Ò»¸öĞ¡ÊıµÄÊäÈëÊı¾İ
+	public float getFloat(String info,String err) {//å¾—åˆ°ä¸€ä¸ªå°æ•°çš„è¾“å…¥æ•°æ®
 		float temp = 0;
 		String str = null;
 		boolean flag = true;
@@ -58,7 +58,7 @@ public class InputData {
 	}
 	
 	
-	public Date getDate(String info,String err) {//µÃµ½Ò»¸öÈÕÆÚµÄÊı¾İ
+	public Date getDate(String info,String err) {//å¾—åˆ°ä¸€ä¸ªæ—¥æœŸçš„æ•°æ®
 		Date d = null;
 		String str = null;
 		boolean flag = true;

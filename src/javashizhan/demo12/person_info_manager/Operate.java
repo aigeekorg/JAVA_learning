@@ -6,16 +6,16 @@ public class Operate {
 	public static void add() {
 		InputData input = new InputData();
 		FileOperate fo = new FileOperate("d:\\test.per");
-		String name = input.getString("ÇëÊäÈëĞÕÃû£º");
-		int age = input.getInt("ÇëÊäÈëÄêÁä£º","ÄêÁä±ØĞëÎªÊı×Ö£¡");
-		Person per = new Person(name, age);//ÊµÀı»¯Person¶ÔÏó
+		String name = input.getString("è¯·è¾“å…¥å§“åï¼š");
+		int age = input.getInt("è¯·è¾“å…¥å¹´é¾„ï¼š","å¹´é¾„å¿…é¡»ä¸ºæ•°å­—ï¼");
+		Person per = new Person(name, age);//å®ä¾‹åŒ–Personå¯¹è±¡
 		try {
 			fo.save(per);
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		System.out.println("ĞÅÏ¢Ôö¼Ó³É¹¦");
+		System.out.println("ä¿¡æ¯å¢åŠ æˆåŠŸ");
 	}
 	
 	public static void delete() {
@@ -26,7 +26,7 @@ public class Operate {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		System.out.println("ĞÅÏ¢É¾³ı³É¹¦");
+		System.out.println("ä¿¡æ¯åˆ é™¤æˆåŠŸ");
 	}
 	
 	
@@ -39,8 +39,8 @@ public class Operate {
 		}catch(Exception e1){
 			e1.printStackTrace();
 		}
-		String name = input.getString("ÇëÊäÈëÄãĞÂµÄĞÕÃû£¨Ô­ĞÕÃû£º"+per.getName()+"£©£º");
-		int age = input.getInt("ÇëÊäÈëĞÂµÄÄêÁä£¨Ô­ÄêÁä£º"+per.getAge()+"£©£º","ÄêÁä±ØĞëÊÇÊı×Ö!");
+		String name = input.getString("è¯·è¾“å…¥ä½ æ–°çš„å§“åï¼ˆåŸå§“åï¼š"+per.getName()+"ï¼‰ï¼š");
+		int age = input.getInt("è¯·è¾“å…¥æ–°çš„å¹´é¾„ï¼ˆåŸå¹´é¾„ï¼š"+per.getAge()+"ï¼‰ï¼š","å¹´é¾„å¿…é¡»æ˜¯æ•°å­—!");
 		per = new Person(name, age);
 		try {
 			fo.save(per);
@@ -48,7 +48,7 @@ public class Operate {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		System.out.println("ĞÅÏ¢¸üĞÂ³É¹¦!");
+		System.out.println("ä¿¡æ¯æ›´æ–°æˆåŠŸ!");
 	}
 	
 	
@@ -56,7 +56,7 @@ public class Operate {
 		FileOperate fo = new FileOperate("d:\\test.per");
 		Person per = null;
 		try {
-			per = (Person)fo.load();//¶ÁÈ¡¶ÔÏó
+			per = (Person)fo.load();//è¯»å–å¯¹è±¡
 		} catch (Exception e1) {
 			// TODO: handle exception
 			e1.printStackTrace();

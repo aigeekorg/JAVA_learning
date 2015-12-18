@@ -1,27 +1,27 @@
 package javashizhan.demo12.pipeddemo;
-//¹ÜµÀÁ÷ÊµÀı£¬ÓÃÓÚÁ½¸öÏß³ÌµÄÍ¨ĞÅ
-//·Ö±ğĞ´ºÃÁ½¸öÊä³öºÍÊäÈëµÄ¹ÜµÀÁ÷Ïß³Ì£¬ÔÚ²Ù×÷Ê±Ö»ĞèÊ¹ÓÃPipedOutputStreamÀàÌá¹©µÄconnect()·½·¨¾Í¿ÉÒÔ½«Á½¸öÏß³ÌÁ¬½ÓÔÚÒ»Æğ£¬
-//ÔÙ·Ö±ğÆô¶¯Á½¸öÏß³Ì£¬ÔÚÏß³ÌÆô¶¯ºó»á×Ô¶¯½øĞĞ¹ÜµÀµÄÊäÈëºÍÊä³ö²Ù×÷
+//ç®¡é“æµå®ä¾‹ï¼Œç”¨äºä¸¤ä¸ªçº¿ç¨‹çš„é€šä¿¡
+//åˆ†åˆ«å†™å¥½ä¸¤ä¸ªè¾“å‡ºå’Œè¾“å…¥çš„ç®¡é“æµçº¿ç¨‹ï¼Œåœ¨æ“ä½œæ—¶åªéœ€ä½¿ç”¨PipedOutputStreamç±»æä¾›çš„connect()æ–¹æ³•å°±å¯ä»¥å°†ä¸¤ä¸ªçº¿ç¨‹è¿æ¥åœ¨ä¸€èµ·ï¼Œ
+//å†åˆ†åˆ«å¯åŠ¨ä¸¤ä¸ªçº¿ç¨‹ï¼Œåœ¨çº¿ç¨‹å¯åŠ¨åä¼šè‡ªåŠ¨è¿›è¡Œç®¡é“çš„è¾“å…¥å’Œè¾“å‡ºæ“ä½œ
 //demo 12.33
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
-class Send implements Runnable{				//ÊµÏÖRunnable½Ó¿Ú
-	private PipedOutputStream pos = null;	//¹ÜµÀÊä³öÁ÷
+class Send implements Runnable{				//å®ç°Runnableæ¥å£
+	private PipedOutputStream pos = null;	//ç®¡é“è¾“å‡ºæµ
 	public Send(){
-		this.pos = new PipedOutputStream();//ÊµÀı»¯Êä³ö¿ÚÁ÷
+		this.pos = new PipedOutputStream();//å®ä¾‹åŒ–è¾“å‡ºå£æµ
 	}
 	public void run(){
 		String str = "Hello World! @From the first thread";
 		try {
-			this.pos.write(str.getBytes());//Êä³öĞÅÏ¢
+			this.pos.write(str.getBytes());//è¾“å‡ºä¿¡æ¯
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 		try {
-			this.pos.close();				//¹Ø±ÕÊä³öÁ÷
+			this.pos.close();				//å…³é—­è¾“å‡ºæµ
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -36,16 +36,16 @@ class Send implements Runnable{				//ÊµÏÖRunnable½Ó¿Ú
 
 
 
-class Receive implements Runnable{//ÊµÏÖRunnable½Ó¿Ú
-	private PipedInputStream pis = null;//¹ÜµÀÊäÈëÁ÷
+class Receive implements Runnable{//å®ç°Runnableæ¥å£
+	private PipedInputStream pis = null;//ç®¡é“è¾“å…¥æµ
 	public Receive(){
-		this.pis = new PipedInputStream();//ÊµÀı»¯ÊäÈëÁ÷
+		this.pis = new PipedInputStream();//å®ä¾‹åŒ–è¾“å…¥æµ
 	}
 	public void run(){
 		byte b[] = new byte[1024];
 		int len = 0;
 		try {
-			len = this.pis.read(b);//½ÓÊÕÊı¾İ
+			len = this.pis.read(b);//æ¥æ”¶æ•°æ®
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -56,7 +56,7 @@ class Receive implements Runnable{//ÊµÏÖRunnable½Ó¿Ú
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		System.out.println("½ÓÊÕµÄÄÚÈİÎª£º"+new String(b,0,len));
+		System.out.println("æ¥æ”¶çš„å†…å®¹ä¸ºï¼š"+new String(b,0,len));
 	}
 	public PipedInputStream getPis(){
 		return pis;
@@ -70,7 +70,7 @@ public class PipedDemo{
 		Send s = new Send();
 		Receive r = new Receive();
 		try {
-			s.getPos().connect(r.getPis());//Á¬½Ó¹ÜµÀ
+			s.getPos().connect(r.getPis());//è¿æ¥ç®¡é“
 		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();

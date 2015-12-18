@@ -3,26 +3,26 @@ package biaoshijiekou;
 public class Hunter {
 	public void fire(Object target) {
 		if (target instanceof Humans) {
-			System.out.println("ÕâÏÂÍêÁË£¬´òÖĞÁËÒ»¸öÈË£¬¸ÃÈ¥×øÀÎÁË£¡");
+			System.out.println("è¿™ä¸‹å®Œäº†ï¼Œæ‰“ä¸­äº†ä¸€ä¸ªäººï¼Œè¯¥å»åç‰¢äº†ï¼");
 		} else {
-			System.out.println("¹§Ï²Äã£¬´òÖĞÁËÒ»Ö»¶¯Îï!");
+			System.out.println("æ­å–œä½ ï¼Œæ‰“ä¸­äº†ä¸€åªåŠ¨ç‰©!");
 		}
 	}
 
-	// ÖÇÄÜµÄÇ¹
+	// æ™ºèƒ½çš„æª
 	public void intelligentFire(Object target) {
 		if (target instanceof Humans) {
 			return;
 		}
-		System.out.println("¿ªÁËÒ»Ç¹!" + target.getClass());
-		// ÏÂÃæ½øĞĞÃëÉ±µÈÏà¹Ø´¦Àí
-		// Ïú»ÙËû
+		System.out.println("å¼€äº†ä¸€æª!" + target.getClass());
+		// ä¸‹é¢è¿›è¡Œç§’æ€ç­‰ç›¸å…³å¤„ç†
+		// é”€æ¯ä»–
 		target = null;
 	}
 
 	public static void main(String[] args) {
 		Hunter hunter = new Hunter();
-		System.out.println(new SomeThing() {});//ÎªÊ²Ã´new SomeThing() {}»á³ÉÎªÒ»¸öhunter$1???
+		System.out.println(new SomeThing() {});//ä¸ºä»€ä¹ˆnew SomeThing() {}ä¼šæˆä¸ºä¸€ä¸ªhunter$1???
 		Object[] objects = new Object[] { new Dog(), new Japanese(),
 				new Japanese(), new Chinese(), new Monster(), new SomeThing() {
 				} };
